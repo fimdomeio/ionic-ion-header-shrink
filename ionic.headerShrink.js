@@ -27,10 +27,10 @@ angular.module('ionic.ion.headerShrink', [])
       var scrollDelay = 0.4;
 
       var fadeAmt;
-      
+
       var header = $document[0].body.querySelector('.bar-header');
       var headerHeight = header.offsetHeight;
-      
+
       function onScroll(e) {
         var scrollTop = e.detail.scrollTop;
 
@@ -39,7 +39,6 @@ angular.module('ionic.ion.headerShrink', [])
         } else {
           y = 0;
         }
-        console.log(scrollTop);
 
         ionic.requestAnimationFrame(function() {
           fadeAmt = 1 - (y / headerHeight);
@@ -54,6 +53,5 @@ angular.module('ionic.ion.headerShrink', [])
 
       $element.bind('scroll', onScroll);
     }
-  }
-})
-
+  };
+});
